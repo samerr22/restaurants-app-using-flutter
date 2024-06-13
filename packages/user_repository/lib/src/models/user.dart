@@ -1,3 +1,6 @@
+
+import '../entities/entities.dart';
+
 export 'user.dart';
 
 class MyUser{
@@ -26,6 +29,21 @@ class MyUser{
       name: name, 
       hasActiveCart: hasActiveCart,);
    }
+
+   static MyUser fromEntity(MyUserEntity entity){
+    return MyUser(
+      userId: entity.userId, 
+      email: entity.email, 
+      name: entity.name, 
+      hasActiveCart: entity.hasActiveCart
+      );
+   }
+
+  @override
+  String toString(){
+    return 'MyUser : $userId,$email,$name,$hasActiveCart';
+  }
+
 
 
 }
